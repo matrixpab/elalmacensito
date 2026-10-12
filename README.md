@@ -1,36 +1,125 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# El Almacencito — Tienda Online
 
-## Getting Started
+Tienda online completa para "El Almacencito" (hierbas medicinales, yuyos, especias,
+blends, infusiones, frutos secos y productos naturales), construida con **Next.js 15**,
+**TypeScript**, **Tailwind CSS** y **Supabase**.
 
-First, run the development server:
+## 1. Requisitos
+
+- Node.js 18.18 o superior
+- Una cuenta de [Supabase](https://supabase.com) (plan gratuito alcanza para empezar)
+- Un número de WhatsApp para recibir los pedidos
+
+## 2. Crear el proyecto en Supabase
+
+1. Entrá a [supabase.com](https://supabase.com) y creá un proyecto nuevo.
+2. Andá a **SQL Editor** y ejecutá, en este orden:
+   1. `supabase/schema.sql` — crea las tablas, políticas de seguridad (RLS) y el bucket
+      de imágenes.
+   2. `supabase/seed.sql` — carga las categorías y algunos productos de ejemplo (podés
+      borrarlos o editarlos después desde el panel).
+3. Andá a **Authentication → Users** y creá el usuario administrador (email + contraseña).
+4. Copiá el `UUID` de ese usuario (columna `id` en la tabla de usuarios de Authentication).
+5. En **SQL Editor**, ejecutá (reemplazando los valores):
+
+   ```sql
+   insert into usuarios (auth_user_id, email, rol)
+   values ('UUID-DEL-USUARIO', 'admin@elalmacencito.com', 'admin');
+   ```
+
+6. En **Project Settings → API**, copiá:
+   - `Project URL` → `NEXT_PUBLIC_SUPABASE_URL`
+   - `anon public` key → `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+   - `service_role` key → `SUPABASE_SERVICE_ROLE_KEY` (¡nunca la expongas en el cliente!)
+
+## 3. Configurar variables de entorno
+
+Copiá `.env.example` a `.env.local` y completá los valores:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cp .env.example .env.local
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+| Variable | Descripción |
+|---|---|
+| `NEXT_PUBLIC_SUPABASE_URL` | URL del proyecto Supabase |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Clave pública (anon) de Supabase |
+| `SUPABASE_SERVICE_ROLE_KEY` | Clave privada de Supabase (solo servidor) |
+| `NEXT_PUBLIC_SITE_URL` | URL final del sitio (para SEO, sitemap, canonical) |
+| `NEXT_PUBLIC_WHATSAPP_NUMBER` | Número de WhatsApp por defecto (también configurable desde el panel) |
+| `NEXT_PUBLIC_GA4_ID` | ID de Google Analytics 4 (también configurable desde el panel) |
+| `NEXT_PUBLIC_GOOGLE_ADS_ID` | ID de Google Ads |
+| `NEXT_PUBLIC_GOOGLE_ADS_LABEL_WHATSAPP` | Label de conversión de Ads para clics de WhatsApp |
+| `NEXT_PUBLIC_GOOGLE_ADS_LABEL_PEDIDO` | Label de conversión de Ads para pedidos enviados |
+| `NEXT_PUBLIC_GSC_VERIFICATION` | Código de verificación de Search Console (también configurable desde el panel) |
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+> El WhatsApp, GA4, Google Ads y la verificación de Search Console también se pueden
+> cambiar en cualquier momento desde **Panel administrador → Configuración**, sin tocar
+> el código ni volver a desplegar.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 4. Instalar y correr en desarrollo
 
-## Learn More
+```bash
+npm install
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Abrí `http://localhost:3000`. El panel administrador está en `http://localhost:3000/admin`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 5. Deploy a producción
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+El proyecto está listo para desplegarse en [Vercel](https://vercel.com) (recomendado) u
+cualquier hosting compatible con Next.js:
 
-## Deploy on Vercel
+1. Subí el proyecto a un repositorio Git.
+2. Importalo en Vercel.
+3. Cargá las mismas variables de entorno del paso 3.
+4. Deploy.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 6. Estructura del proyecto
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+app/                    Rutas (App Router)
+  page.tsx              Home
+  categoria/[slug]/     Página de categoría
+  producto/[slug]/      Página de producto (con JSON-LD)
+  carrito/               Carrito y checkout por WhatsApp
+  buscar/                Buscador inteligente
+  admin/                  Panel administrador (protegido)
+  sitemap.ts / robots.ts  SEO técnico automático
+components/             Componentes de UI
+lib/                    Lógica compartida (Supabase, búsqueda, WhatsApp, analytics)
+supabase/               schema.sql y seed.sql
+```
+
+## 7. Panel administrador
+
+- **Productos**: crear, editar, eliminar, duplicar, activar/desactivar. Subida de
+  imágenes directo a Supabase Storage.
+- **Precios masivos**: aumento por porcentaje general, por categoría o por selección de
+  productos, con vista previa antes de confirmar e historial de cambios.
+- **Stock**: alertas de productos sin stock y bajo el mínimo.
+- **Pedidos**: listado de pedidos recibidos por WhatsApp, con cambio de estado
+  (Pendiente / En preparación / Entregado).
+- **Excel**: exportar todo el catálogo a `.xlsx`, e importar un Excel para crear o
+  actualizar productos en lote (matchea por SKU).
+- **Configuración**: número de WhatsApp, GA4, Google Ads, Search Console e información
+  de envíos.
+
+## 8. SEO y analítica
+
+- Sitemap (`/sitemap.xml`) y robots (`/robots.txt`) generados automáticamente a partir
+  del catálogo activo.
+- Meta title, meta description y slug amigable automáticos por producto (editables desde
+  el panel).
+- JSON-LD (`Product`, `Store`) para rich results de Google.
+- Open Graph y Twitter Cards en todas las páginas.
+- Eventos de Google Analytics 4: `view_item`, `add_to_cart`, `begin_checkout`,
+  `whatsapp_click`, `purchase_request`.
+- Conversiones de Google Ads listas para conectar (clic en WhatsApp y pedido enviado).
+
+## 9. Buscador inteligente
+
+El buscador entiende sinónimos y grupos temáticos (por ejemplo, "té digestivo" muestra
+manzanilla, poleo, menta y cedrón). El diccionario de sinónimos está en
+`lib/search-synonyms.ts` y se puede ampliar fácilmente.

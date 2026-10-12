@@ -1,0 +1,361 @@
+{
+  "categorias": [
+    {
+      "id": "cat-1",
+      "nombre": "Hierbas medicinales",
+      "slug": "hierbas-medicinales",
+      "descripcion": "Hierbas medicinales seleccionadas para tu bienestar: manzanilla, boldo, cedrón y más.",
+      "imagen_url": "https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=600&q=80",
+      "orden": 1,
+      "activa": true,
+      "created_at": "2026-10-12T19:35:14.309Z"
+    },
+    {
+      "id": "cat-2",
+      "nombre": "Hierbas por kilo",
+      "slug": "hierbas-por-kilo",
+      "descripcion": "Hierbas naturales a granel por kilo, con el mejor precio por cantidad.",
+      "imagen_url": "https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&w=600&q=80",
+      "orden": 2,
+      "activa": true,
+      "created_at": "2026-10-12T19:35:14.309Z"
+    },
+    {
+      "id": "cat-3",
+      "nombre": "Hierbas fraccionadas",
+      "slug": "hierbas-fraccionadas",
+      "descripcion": "Hierbas fraccionadas en 250 g y 500 g, ideales para probar o consumo hogareño.",
+      "imagen_url": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80",
+      "orden": 3,
+      "activa": true,
+      "created_at": "2026-10-12T19:35:14.309Z"
+    },
+    {
+      "id": "cat-4",
+      "nombre": "Especias",
+      "slug": "especias",
+      "descripcion": "Especias naturales para dar sabor y aroma a tus comidas.",
+      "imagen_url": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80",
+      "orden": 4,
+      "activa": true,
+      "created_at": "2026-10-12T19:35:14.309Z"
+    },
+    {
+      "id": "cat-5",
+      "nombre": "Yerbas saborizadas",
+      "slug": "yerbas-saborizadas",
+      "descripcion": "Yerba mate saborizada con hierbas naturales: peperina, boldo, cedrón y burrito.",
+      "imagen_url": "https://images.unsplash.com/photo-1514733670139-4d87a1941d55?auto=format&fit=crop&w=600&q=80",
+      "orden": 5,
+      "activa": true,
+      "created_at": "2026-10-12T19:35:14.309Z"
+    },
+    {
+      "id": "cat-6",
+      "nombre": "Blends",
+      "slug": "blends",
+      "descripcion": "Mezclas de hierbas creadas para objetivos específicos de bienestar.",
+      "imagen_url": "https://images.unsplash.com/photo-1563822249548-9a72b6353cd1?auto=format&fit=crop&w=600&q=80",
+      "orden": 6,
+      "activa": true,
+      "created_at": "2026-10-12T19:35:14.309Z"
+    },
+    {
+      "id": "cat-7",
+      "nombre": "Infusiones",
+      "slug": "infusiones",
+      "descripcion": "Infusiones naturales listas para preparar tu té o mate cocido favorito.",
+      "imagen_url": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80",
+      "orden": 7,
+      "activa": true,
+      "created_at": "2026-10-12T19:35:14.309Z"
+    },
+    {
+      "id": "cat-8",
+      "nombre": "Frutos secos",
+      "slug": "frutos-secos",
+      "descripcion": "Frutos secos naturales y tostados, fuente de energía y nutrientes.",
+      "imagen_url": "https://images.unsplash.com/photo-1536591375315-1b8368157727?auto=format&fit=crop&w=600&q=80",
+      "orden": 8,
+      "activa": true,
+      "created_at": "2026-10-12T19:35:14.309Z"
+    },
+    {
+      "id": "cat-9",
+      "nombre": "Promociones",
+      "slug": "promociones",
+      "descripcion": "Ofertas y combos especiales de la semana.",
+      "imagen_url": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=80",
+      "orden": 9,
+      "activa": true,
+      "created_at": "2026-10-12T19:35:14.309Z"
+    }
+  ],
+  "productos": [
+    {
+      "id": "prod-1",
+      "nombre": "Manzanilla Premium",
+      "slug": "manzanilla",
+      "categoria_id": "cat-1",
+      "categoria": {
+        "id": "cat-1",
+        "nombre": "Hierbas medicinales",
+        "slug": "hierbas-medicinales",
+        "descripcion": "Hierbas medicinales seleccionadas para tu bienestar: manzanilla, boldo, cedrón y más.",
+        "imagen_url": "https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=600&q=80",
+        "orden": 1,
+        "activa": true,
+        "created_at": "2026-10-12T19:35:14.309Z"
+      },
+      "descripcion_larga": "Comprá manzanilla premium por kilo, medio kilo o cuarto kilo. Flores seleccionadas, ideales para infusiones digestivas y relajantes. Calidad seleccionada y envíos a todo el país.",
+      "beneficios": [
+        "Digestiva",
+        "Relajante",
+        "Ayuda a conciliar el sueño"
+      ],
+      "imagen_principal": "https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=600&q=80",
+      "imagenes_secundarias": [],
+      "precio_1kg": 12000,
+      "precio_500g": 6500,
+      "precio_250g": 3500,
+      "precio_unidad": null,
+      "stock_actual": 50,
+      "stock_minimo": 5,
+      "sku": "MANZ-001",
+      "meta_title": "Manzanilla Premium | El Almacencito",
+      "meta_description": "Comprá manzanilla premium por kilo, medio kilo o cuarto kilo. Calidad seleccionada.",
+      "palabras_clave": [
+        "hierbas medicinales",
+        "manzanilla",
+        "te digestivo",
+        "hierbas por kilo"
+      ],
+      "activo": true,
+      "destacado": true,
+      "en_promocion": false,
+      "created_at": "2026-10-12T19:35:14.309Z",
+      "updated_at": "2026-10-12T19:35:14.309Z"
+    },
+    {
+      "id": "prod-2",
+      "nombre": "Menta Piperita",
+      "slug": "menta",
+      "categoria_id": "cat-1",
+      "categoria": {
+        "id": "cat-1",
+        "nombre": "Hierbas medicinales",
+        "slug": "hierbas-medicinales",
+        "descripcion": "Hierbas medicinales seleccionadas para tu bienestar: manzanilla, boldo, cedrón y más.",
+        "imagen_url": "https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=600&q=80",
+        "orden": 1,
+        "activa": true,
+        "created_at": "2026-10-12T19:35:14.309Z"
+      },
+      "descripcion_larga": "Menta piperita de aroma intenso, ideal para infusiones digestivas y para saborizar el mate. Disponible por kilo, medio kilo, cuarto kilo y unidad.",
+      "beneficios": [
+        "Digestiva",
+        "Refrescante",
+        "Ideal para el mate"
+      ],
+      "imagen_principal": "https://images.unsplash.com/photo-1628556270448-4d4e4148e1b1?auto=format&fit=crop&w=600&q=80",
+      "imagenes_secundarias": [],
+      "precio_1kg": 10500,
+      "precio_500g": 5800,
+      "precio_250g": 3100,
+      "precio_unidad": 800,
+      "stock_actual": 60,
+      "stock_minimo": 5,
+      "sku": "MENT-001",
+      "meta_title": "Menta Piperita | El Almacencito",
+      "meta_description": "Comprá menta piperita natural por kilo, fraccionada o por unidad.",
+      "palabras_clave": [
+        "hierbas medicinales",
+        "menta",
+        "te digestivo",
+        "hierbas para mate"
+      ],
+      "activo": true,
+      "destacado": true,
+      "en_promocion": false,
+      "created_at": "2026-10-12T19:35:14.309Z",
+      "updated_at": "2026-10-12T19:35:14.309Z"
+    },
+    {
+      "id": "prod-3",
+      "nombre": "Hibiscus (Flor de Jamaica)",
+      "slug": "hibiscus",
+      "categoria_id": "cat-7",
+      "categoria": {
+        "id": "cat-7",
+        "nombre": "Infusiones",
+        "slug": "infusiones",
+        "descripcion": "Infusiones naturales listas para preparar tu té o mate cocido favorito.",
+        "imagen_url": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80",
+        "orden": 7,
+        "activa": true,
+        "created_at": "2026-10-12T19:35:14.309Z"
+      },
+      "descripcion_larga": "Hibiscus en flor, ideal para preparar infusiones frías o calientes de sabor intenso y color rojo natural.",
+      "beneficios": [
+        "Antioxidante",
+        "Refrescante"
+      ],
+      "imagen_principal": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80",
+      "imagenes_secundarias": [],
+      "precio_1kg": 13500,
+      "precio_500g": 7200,
+      "precio_250g": 3800,
+      "precio_unidad": null,
+      "stock_actual": 25,
+      "stock_minimo": 5,
+      "sku": "HIBI-001",
+      "meta_title": "Hibiscus (Flor de Jamaica) | El Almacencito",
+      "meta_description": "Comprá hibiscus natural por kilo o fraccionado. Ideal para té frío.",
+      "palabras_clave": [
+        "hibiscus",
+        "infusiones naturales",
+        "te frio"
+      ],
+      "activo": true,
+      "destacado": true,
+      "en_promocion": false,
+      "created_at": "2026-10-12T19:35:14.309Z",
+      "updated_at": "2026-10-12T19:35:14.309Z"
+    },
+    {
+      "id": "prod-4",
+      "nombre": "Yerba Mate Saborizada con Peperina",
+      "slug": "yerba-peperina",
+      "categoria_id": "cat-5",
+      "categoria": {
+        "id": "cat-5",
+        "nombre": "Yerbas saborizadas",
+        "slug": "yerbas-saborizadas",
+        "descripcion": "Yerba mate saborizada con hierbas naturales: peperina, boldo, cedrón y burrito.",
+        "imagen_url": "https://images.unsplash.com/photo-1514733670139-4d87a1941d55?auto=format&fit=crop&w=600&q=80",
+        "orden": 5,
+        "activa": true,
+        "created_at": "2026-10-12T19:35:14.309Z"
+      },
+      "descripcion_larga": "Yerba mate saborizada naturalmente con peperina, para un mate fresco y aromático.",
+      "beneficios": [
+        "Sabor refrescante",
+        "Elaboración natural"
+      ],
+      "imagen_principal": "https://images.unsplash.com/photo-1514733670139-4d87a1941d55?auto=format&fit=crop&w=600&q=80",
+      "imagenes_secundarias": [],
+      "precio_1kg": 9500,
+      "precio_500g": 5200,
+      "precio_250g": 2800,
+      "precio_unidad": null,
+      "stock_actual": 40,
+      "stock_minimo": 5,
+      "sku": "YERB-001",
+      "meta_title": "Yerba Mate Saborizada con Peperina | El Almacencito",
+      "meta_description": "Comprá yerba mate saborizada con peperina. Sabor natural.",
+      "palabras_clave": [
+        "yerbas saborizadas",
+        "mezclas para mate",
+        "hierbas para mate"
+      ],
+      "activo": true,
+      "destacado": true,
+      "en_promocion": true,
+      "created_at": "2026-10-12T19:35:14.309Z",
+      "updated_at": "2026-10-12T19:35:14.309Z"
+    },
+    {
+      "id": "prod-5",
+      "nombre": "Blend Digestivo (Manzanilla, Poleo, Menta y Cedrón)",
+      "slug": "blend-digestivo",
+      "categoria_id": "cat-6",
+      "categoria": {
+        "id": "cat-6",
+        "nombre": "Blends",
+        "slug": "blends",
+        "descripcion": "Mezclas de hierbas creadas para objetivos específicos de bienestar.",
+        "imagen_url": "https://images.unsplash.com/photo-1563822249548-9a72b6353cd1?auto=format&fit=crop&w=600&q=80",
+        "orden": 6,
+        "activa": true,
+        "created_at": "2026-10-12T19:35:14.309Z"
+      },
+      "descripcion_larga": "Mezcla especial de manzanilla, poleo, menta y cedrón pensada para después de las comidas.",
+      "beneficios": [
+        "Digestivo",
+        "Mezcla lista para infusionar"
+      ],
+      "imagen_principal": "https://images.unsplash.com/photo-1563822249548-9a72b6353cd1?auto=format&fit=crop&w=600&q=80",
+      "imagenes_secundarias": [],
+      "precio_1kg": 13000,
+      "precio_500g": 7000,
+      "precio_250g": 3700,
+      "precio_unidad": null,
+      "stock_actual": 30,
+      "stock_minimo": 5,
+      "sku": "BLEN-001",
+      "meta_title": "Blend Digestivo | El Almacencito",
+      "meta_description": "Comprá nuestro blend digestivo de manzanilla, poleo, menta y cedrón.",
+      "palabras_clave": [
+        "blends naturales",
+        "te digestivo",
+        "mezclas"
+      ],
+      "activo": true,
+      "destacado": true,
+      "en_promocion": true,
+      "created_at": "2026-10-12T19:35:14.309Z",
+      "updated_at": "2026-10-12T19:35:14.309Z"
+    },
+    {
+      "id": "prod-6",
+      "nombre": "Combo Bienestar (Manzanilla + Boldo + Cedrón)",
+      "slug": "combo-bienestar",
+      "categoria_id": "cat-9",
+      "categoria": {
+        "id": "cat-9",
+        "nombre": "Promociones",
+        "slug": "promociones",
+        "descripcion": "Ofertas y combos especiales de la semana.",
+        "imagen_url": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=80",
+        "orden": 9,
+        "activa": true,
+        "created_at": "2026-10-12T19:35:14.309Z"
+      },
+      "descripcion_larga": "Combo promocional con tres clásicos de nuestra tienda: manzanilla, boldo y cedrón, en presentación de 250 g cada uno.",
+      "beneficios": [
+        "Ahorro en combo",
+        "Selección de la casa"
+      ],
+      "imagen_principal": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=80",
+      "imagenes_secundarias": [],
+      "precio_1kg": null,
+      "precio_500g": null,
+      "precio_250g": 8500,
+      "precio_unidad": null,
+      "stock_actual": 15,
+      "stock_minimo": 3,
+      "sku": "PROM-001",
+      "meta_title": "Combo Bienestar | Promoción | El Almacencito",
+      "meta_description": "Combo promocional de manzanilla, boldo y cedrón en 250 g cada uno.",
+      "palabras_clave": [
+        "promociones",
+        "productos naturales"
+      ],
+      "activo": true,
+      "destacado": true,
+      "en_promocion": true,
+      "created_at": "2026-10-12T19:35:14.309Z",
+      "updated_at": "2026-10-12T19:35:14.309Z"
+    }
+  ],
+  "configuracion": {
+    "id": "1",
+    "whatsapp_numero": "5491162037583",
+    "ga4_id": null,
+    "google_ads_id": null,
+    "gsc_verification": null,
+    "envios_info": "Enviamos a todo el país con las mejores agencias de correo.",
+    "updated_at": "2026-10-12T19:35:14.309Z"
+  },
+  "pedidos": []
+}
